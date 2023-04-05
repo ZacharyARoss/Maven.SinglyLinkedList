@@ -3,7 +3,7 @@ package com.zipcodewilmington.singlylinkedlist;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.runtime.VM;
+
 
 /**
  * Created by leon on 1/10/18.
@@ -81,9 +81,9 @@ public class SinglyLinkedListTest {
     public void testGet(){
         String expected = "target";
         list.add("");
-        list.add(val);
+        list.add(expected);
 
-        int actual = list.get(1);
+        Node actual = list.get(1);
 
         Assert.assertEquals(expected,actual);
     }
@@ -98,7 +98,7 @@ public class SinglyLinkedListTest {
 
         Assert.assertNotEquals(list.toString(), newList.toString());
         for (int i = 0; i < list.size(); i++) {
-            Assert.assertEquals(list.get(i).data,newlist.get(i).data);
+            Assert.assertEquals(list.get(i).getData(), newList.get(i).getData());
         }
     }
 
@@ -111,10 +111,10 @@ public class SinglyLinkedListTest {
 
         list.sort();
 
-        Assert.assertEquals(list.get(0).data,"Annie");
-        Assert.assertEquals(list.get(1).data,"LeeSin");
-        Assert.assertEquals(list.get(2).data,"Yasuo");
-        Assert.assertEquals(list.get(3).data,"Zed");
+        Assert.assertEquals(list.get(0).getData(),"Annie");
+        Assert.assertEquals(list.get(1).getData(),"LeeSin");
+        Assert.assertEquals(list.get(2).getData(),"Yasuo");
+        Assert.assertEquals(list.get(3).getData(),"Zed");
 
     }
 
